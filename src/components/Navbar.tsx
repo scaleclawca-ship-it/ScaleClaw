@@ -28,24 +28,25 @@ const Navbar = () => {
             </a>
           </div>
           
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10">
+            <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
+              How it Works
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#proof" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
+              Results
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#models" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
+              Business Models
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </div>
+
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-10">
-              <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
-                How it Works
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#proof" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
-                Results
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#models" className="text-gray-300 hover:text-white transition-colors relative group py-2 font-bold text-sm uppercase tracking-widest">
-                Business Models
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-scale-red transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#pricing" className="bg-white text-black hover:bg-scale-red hover:text-white px-8 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(229,9,20,0.6)] ml-4 hover:-translate-y-0.5">
-                Join Community
-              </a>
-            </div>
+            <a href="#pricing" className="bg-white text-black hover:bg-scale-red hover:text-white px-8 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(229,9,20,0.6)] hover:-translate-y-0.5">
+              Join Community
+            </a>
           </div>
           
           <div className="-mr-2 flex md:hidden">

@@ -74,7 +74,7 @@ const PricingTiers = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15, type: "spring" }}
               whileHover={{ y: -10 }}
-              className={`rounded-[2rem] p-8 lg:p-10 relative overflow-hidden backdrop-blur-3xl ${
+              className={`rounded-[2rem] p-8 lg:p-10 relative overflow-hidden backdrop-blur-3xl flex flex-col h-full ${
                 tier.recommended 
                   ? 'bg-gradient-to-b from-[#2a0808] to-[#0a0000] border-2 border-scale-red shadow-[0_0_50px_rgba(229,9,20,0.2)]' 
                   : 'bg-white/[0.02] border border-white/[0.08] hover:border-white/20 hover:bg-white/[0.04]'
@@ -110,7 +110,7 @@ const PricingTiers = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-5 rounded-2xl font-black text-lg transition-all relative overflow-hidden group ${
+              <button className={`mt-auto w-full py-5 rounded-2xl font-black text-lg transition-all relative overflow-hidden group ${
                 tier.recommended
                   ? 'bg-scale-red hover:bg-scale-red-light text-white shadow-[0_0_30px_rgba(229,9,20,0.4)] hover:shadow-[0_0_50px_rgba(229,9,20,0.6)]'
                   : 'bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20'

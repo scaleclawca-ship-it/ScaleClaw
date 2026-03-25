@@ -90,7 +90,7 @@ const RevenueModels = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="glass p-8 rounded-3xl border border-white/[0.08] hover:border-scale-red/50 transition-all duration-300 group cursor-default bg-white/[0.01] hover:bg-white/[0.03]"
+                className="glass p-8 rounded-3xl border border-white/[0.08] hover:border-scale-red/50 transition-all duration-300 group cursor-default bg-white/[0.01] hover:bg-white/[0.03] flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-scale-dark to-[#1a1a1a] border border-white/10 text-scale-red flex items-center justify-center group-hover:bg-scale-red group-hover:text-white transition-colors duration-500 shadow-xl group-hover:shadow-[0_0_20px_rgba(229,9,20,0.4)]">
@@ -99,7 +99,7 @@ const RevenueModels = () => {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-scale-red-light transition-colors">{model.title}</h3>
                 <p className="text-sm text-gray-400 mb-6 leading-relaxed font-medium">{model.description}</p>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex mt-auto items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider self-start">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                   {model.income}
                 </div>
