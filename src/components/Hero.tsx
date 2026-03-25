@@ -85,7 +85,7 @@ const Hero = () => {
           animate="visible"
           className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
         >
-          <motion.div animate={floatingAnimation} style={{ animationDelay: "0s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02]">
+          <motion.div animate={floatingAnimation} style={{ animationDelay: "0s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02] h-full flex flex-col">
             <div className="w-14 h-14 bg-gradient-to-br from-scale-red/20 to-transparent rounded-2xl flex items-center justify-center mb-6 text-scale-red border border-scale-red/20 group-hover:scale-110 transition-transform">
               <Bot className="w-7 h-7" />
             </div>
@@ -93,7 +93,7 @@ const Hero = () => {
             <p className="text-gray-400 leading-relaxed font-medium">Step-by-step videos for non-technical users to completely set up OpenClaw without terminal errors.</p>
           </motion.div>
           
-          <motion.div animate={floatingAnimation} style={{ animationDelay: "1s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02] mt-4 md:mt-8">
+          <motion.div animate={floatingAnimation} style={{ animationDelay: "1s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02] h-full flex flex-col">
             <div className="w-14 h-14 bg-gradient-to-br from-scale-red/20 to-transparent rounded-2xl flex items-center justify-center mb-6 text-scale-red border border-scale-red/20 group-hover:scale-110 transition-transform">
               <Zap className="w-7 h-7" />
             </div>
@@ -101,7 +101,7 @@ const Hero = () => {
             <p className="text-gray-400 leading-relaxed font-medium">Copy-paste configs and proven SOUL.md templates to automate lead gen, social, and emails.</p>
           </motion.div>
 
-          <motion.div animate={floatingAnimation} style={{ animationDelay: "2s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02]">
+          <motion.div animate={floatingAnimation} style={{ animationDelay: "2s" }} className="glass p-8 rounded-3xl border border-gray-800 hover:border-scale-red transition-all group hover:bg-white/[0.02] h-full flex flex-col">
             <div className="w-14 h-14 bg-gradient-to-br from-scale-red/20 to-transparent rounded-2xl flex items-center justify-center mb-6 text-scale-red border border-scale-red/20 group-hover:scale-110 transition-transform">
               <TrendingUp className="w-7 h-7" />
             </div>
