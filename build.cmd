@@ -1,0 +1,6 @@
+@echo off
+set PATH=C:\Program Files\nodejs;%PATH%
+echo Installing dependencies...
+call npm install
+echo Starting development server...
+call npm run dev
