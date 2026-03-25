@@ -4,9 +4,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-6">
           <a href="/" className="flex items-center gap-2 text-white">
-            <div className="w-8 h-8 bg-scale-red rounded flex items-center justify-center font-bold text-lg glow">
-              S
-            </div>
+            <img src="/logo.png" alt="ScaleClaw Logo" className="w-8 h-8 object-contain drop-shadow-[0_0_15px_rgba(229,9,20,0.5)]" />
             <span className="font-bold text-lg tracking-tight">ScaleClaw</span>
           </a>
         </div>

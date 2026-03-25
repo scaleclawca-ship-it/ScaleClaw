@@ -10,9 +10,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center gap-2 text-white">
-              <div className="w-10 h-10 bg-scale-red rounded-lg flex items-center justify-center font-bold text-xl glow">
-                S
-              </div>
+              <img src="/logo.png" alt="ScaleClaw Logo" className="w-10 h-10 object-contain drop-shadow-[0_0_15px_rgba(229,9,20,0.5)]" />
               <span className="font-bold text-xl tracking-tight">ScaleClaw</span>
             </a>
           </div>
