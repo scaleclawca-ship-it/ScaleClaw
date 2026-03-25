@@ -74,10 +74,10 @@ const PricingTiers = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15, type: "spring" }}
               whileHover={{ y: -10 }}
-              className={`rounded-[2rem] p-8 lg:p-10 relative overflow-hidden backdrop-blur-3xl flex flex-col h-full ${
+              className={`rounded-[2rem] p-8 lg:p-10 relative flex flex-col h-full ${
                 tier.recommended 
-                  ? 'bg-gradient-to-b from-[#2a0808] to-[#0a0000] border-2 border-scale-red shadow-[0_0_50px_rgba(229,9,20,0.2)]' 
-                  : 'bg-white/[0.02] border border-white/[0.08] hover:border-white/20 hover:bg-white/[0.04]'
+                  ? 'bg-gradient-to-b from-[#2a0808] to-[#0a0000] border-2 border-scale-red shadow-[0_0_50px_rgba(229,9,20,0.2)] overflow-hidden' 
+                  : 'glass hover:border-white/20'
               } transition-all duration-500`}
             >
               {tier.recommended && (
