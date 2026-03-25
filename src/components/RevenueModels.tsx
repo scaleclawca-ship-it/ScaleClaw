@@ -42,45 +42,71 @@ const models: RevenueModel[] = [
 
 const icons = [Globe, Code, Share2, Laptop, ShoppingBag, PenTool, Database];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+};
+
 const RevenueModels = () => {
   return (
-    <section id="models" className="py-24 bg-scale-gray-light border-y border-scale-gray relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 md:flex md:items-end justify-between">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">7 Ways to Monetize.</h2>
-            <p className="text-gray-400 text-lg">
+    <section id="models" className="py-32 bg-[#0a0a0a] border-y border-white/[0.05] relative overflow-hidden bg-grid-pattern">
+      
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-scale-red rounded-full mix-blend-screen filter blur-[150px] opacity-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mb-20 md:flex md:items-end justify-between">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">7 Ways to <br/><span className="text-gradient drop-shadow-md">Monetize.</span></h2>
+            <p className="text-gray-400 text-xl font-medium leading-relaxed">
               We teach specific frameworks for generating income with OpenClaw. Pick your path and follow the blueprint.
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {models.map((model, index) => {
             const Icon = icons[index];
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="glass p-6 rounded-2xl border border-gray-700 hover:border-scale-red transition-all group cursor-default shadow-lg hover:shadow-[0_0_20px_rgba(229,9,20,0.15)]"
+                variants={cardVariants}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="glass p-8 rounded-3xl border border-white/[0.08] hover:border-scale-red/50 transition-all duration-300 group cursor-default bg-white/[0.01] hover:bg-white/[0.03]"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-scale-dark border border-gray-700 text-scale-red flex items-center justify-center group-hover:bg-scale-red group-hover:text-white transition-colors">
-                    <Icon className="w-6 h-6" />
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-scale-dark to-[#1a1a1a] border border-white/10 text-scale-red flex items-center justify-center group-hover:bg-scale-red group-hover:text-white transition-colors duration-500 shadow-xl group-hover:shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+                    <Icon className="w-7 h-7" />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{model.title}</h3>
-                <p className="text-sm text-gray-400 mb-4">{model.description}</p>
-                <span className="inline-block text-xs font-bold text-green-400 bg-green-400/10 px-3 py-1.5 rounded-full border border-green-400/20">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-scale-red-light transition-colors">{model.title}</h3>
+                <p className="text-sm text-gray-400 mb-6 leading-relaxed font-medium">{model.description}</p>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                   {model.income}
-                </span>
+                </div>
               </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
