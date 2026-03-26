@@ -54,7 +54,7 @@ const Hero = () => {
             className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[1.1] text-gray-900 dark:text-white"
           >
             Turn OpenClaw into <br />
-            <span className="text-gradient drop-shadow-sm dark:drop-shadow-[0_0_25px_rgba(229,9,20,0.4)]">Automated Income</span>
+            <span className="text-gradient drop-shadow-sm dark:drop-shadow-[0_0_25px_rgba(229,9,20,0.4)] pr-2">Automated Income</span>
           </motion.h1>
           
           <motion.p 
