@@ -18,10 +18,12 @@ const BackgroundEffect = () => {
     const isDark = () => document.documentElement.classList.contains('dark');
 
     let particles: Particle[] = [];
-    const particleCount = Math.floor((width * height) / 1000); // Massive particle cloud for high density silk
+    const isMobile = width < 768;
+    // Strict limits for smooth 60fps and battery saving on all devices
+    const particleCount = isMobile ? 250 : Math.min(800, Math.floor((width * height) / 2500));
     
     // Flow field grid resolution
-    const resolution = 30; 
+    const resolution = isMobile ? 50 : 35; 
     let cols = Math.ceil(width / resolution) + 1;
     let rows = Math.ceil(height / resolution) + 1;
     let flowField: number[] = new Array(cols * rows).fill(0);
