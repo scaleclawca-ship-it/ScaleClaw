@@ -17,9 +17,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass border-b border-white/10 py-0 shadow-2xl' : 'bg-transparent py-4'}`}
+      className={`fixed w-full z-50 transition-[padding] duration-500 ${scrolled ? 'py-0' : 'py-4'}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`absolute inset-0 glass transition-opacity duration-500 border-b border-white/10 shadow-2xl pointer-events-none ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center gap-3 text-white group">
