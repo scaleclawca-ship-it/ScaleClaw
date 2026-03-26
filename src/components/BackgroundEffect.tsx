@@ -145,7 +145,7 @@ const BackgroundEffect = () => {
   return (
     <canvas 
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 bg-transparent mix-blend-screen"
+      className="pointer-events-none fixed inset-0 z-0 bg-transparent transition-opacity duration-300"
     />
   );
 };
