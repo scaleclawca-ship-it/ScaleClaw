@@ -2,7 +2,7 @@ import { Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-scale-dark border-t border-gray-200 dark:border-scale-gray py-12 text-center transition-colors duration-500">
+    <footer className="relative z-10 bg-gray-100 dark:bg-scale-dark border-t border-gray-200 dark:border-scale-gray py-12 text-center transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-6">
           <a href="/" className="flex items-center gap-2 text-gray-900 dark:text-white group">
