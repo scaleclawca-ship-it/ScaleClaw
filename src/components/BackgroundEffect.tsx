@@ -13,8 +13,6 @@ const BackgroundEffect = () => {
     setIsRendered(true);
     
     // Set initial position to center of screen invisibly
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
     smoothX.set(0);
     smoothY.set(0);
 
