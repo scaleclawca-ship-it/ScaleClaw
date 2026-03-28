@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
@@ -14,10 +13,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+    <nav 
       className={`fixed w-full z-50 transition-[padding] duration-500 ${scrolled ? 'py-0' : 'py-4'}`}
     >
       <div className={`absolute inset-0 glass transition-opacity duration-500 border-b border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl pointer-events-none ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
@@ -64,12 +60,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+      {isOpen && (
+          <div 
             className="md:hidden glass border-b border-gray-200 dark:border-white/10 absolute w-full top-20 left-0 shadow-3xl overflow-hidden backdrop-blur-3xl"
           >
             <div className="px-6 pt-4 pb-8 space-y-4">
@@ -80,10 +72,9 @@ const Navbar = () => {
                 <a href="#pricing" className="block w-full text-center bg-scale-red hover:bg-scale-red-light px-4 py-4 rounded-2xl text-white font-black text-xl uppercase tracking-widest shadow-lg dark:shadow-[0_0_30px_rgba(229,9,20,0.5)]">Join Community</a>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };
 

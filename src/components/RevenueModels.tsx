@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Code, PenTool, Database, Laptop, ShoppingBag, Globe, Share2 } from 'lucide-react';
 import { RevenueModel } from '../types';
 
@@ -42,19 +41,6 @@ const models: RevenueModel[] = [
 
 const icons = [Globe, Code, Share2, Laptop, ShoppingBag, PenTool, Database];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-};
-
 const RevenueModels = () => {
   return (
     <section id="models" className="py-32 bg-gray-50 dark:bg-[#0a0a0a] border-y border-gray-200 dark:border-white/[0.05] relative overflow-hidden bg-grid-pattern transition-colors duration-500">
@@ -63,33 +49,20 @@ const RevenueModels = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-20 md:flex md:items-end justify-between">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl"
-          >
+          <div className="max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-gray-900 dark:text-white">7 Ways to <br/><span className="text-gradient drop-shadow-sm dark:drop-shadow-md">Monetize.</span></h2>
             <p className="text-gray-600 dark:text-gray-400 text-xl font-medium leading-relaxed">
               We teach specific frameworks for generating income with OpenClaw. Pick your path and follow the blueprint.
             </p>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {models.map((model, index) => {
             const Icon = icons[index];
             return (
-              <motion.div
+              <div
                 key={index}
-                variants={cardVariants}
-                whileHover={{ y: -8, scale: 1.02 }}
                 className="glass p-8 rounded-3xl border border-gray-200 dark:border-white/[0.08] hover:border-scale-red/50 transition-all duration-300 group cursor-default bg-white/50 dark:bg-white/[0.01] hover:bg-white dark:hover:bg-white/[0.03] flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-6">
@@ -100,13 +73,13 @@ const RevenueModels = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-scale-red-light transition-colors">{model.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed font-medium">{model.description}</p>
                 <div className="inline-flex mt-auto items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-wider self-start">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400"></span>
                   {model.income}
                 </div>
-              </motion.div>
+              </div>
             )
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

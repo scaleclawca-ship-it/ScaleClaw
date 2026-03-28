@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion';
 import { CheckCircle2, Star } from 'lucide-react';
 import { Tier } from '../types';
 
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: "$29",
+    price: "$35",
     description: "For complete beginners who have never used OpenClaw.",
     features: [
       "Step-by-step OpenClaw setup guides",
@@ -18,7 +17,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Builder",
-    price: "$99",
+    price: "$150",
     description: "For those ready to build real income streams or automate a business.",
     recommended: true,
     features: [
@@ -32,7 +31,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Operator",
-    price: "$499",
+    price: "$500",
     description: "For people scaling to serious income or running agencies.",
     features: [
       "Everything in Builder",
@@ -53,27 +52,17 @@ const PricingTiers = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-scale-red rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[150px] opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-gray-900 dark:text-white">Join The <span className="text-gradient">Ecosystem</span>.</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-xl font-medium">
             Choose the tier that fits your current goals. Upgrade anytime as your automated income grows.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start lg:gap-10">
-          {tiers.map((tier, index) => (
-            <motion.div
+          {tiers.map((tier) => (
+            <div
               key={tier.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15, type: "spring" }}
-              whileHover={{ y: -10 }}
               className={`rounded-[2rem] p-8 lg:p-10 relative flex flex-col h-full ${
                 tier.recommended 
                   ? 'bg-gradient-to-b from-red-50 to-white dark:from-[#2a0808] dark:to-[#0a0000] border-2 border-scale-red shadow-[0_0_30px_rgba(229,9,20,0.1)] dark:shadow-[0_0_50px_rgba(229,9,20,0.2)] overflow-hidden' 
@@ -84,10 +73,10 @@ const PricingTiers = () => {
                 <>
                   <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-scale-red to-transparent"></div>
                   <div className="absolute top-0 right-0 p-6">
-                    <Star className="w-8 h-8 text-scale-red fill-scale-red animate-pulse" />
+                    <Star className="w-8 h-8 text-scale-red fill-scale-red" />
                   </div>
                   <div className="inline-block bg-scale-red/10 dark:bg-scale-red/20 border border-scale-red/20 dark:border-scale-red/30 text-scale-red font-black text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-6 relative z-10">
-                    Most Popular
+                    Best Value
                   </div>
                 </>
               )}
@@ -117,10 +106,10 @@ const PricingTiers = () => {
               }`}>
                 <span className="relative z-10">Join {tier.name}</span>
                 {tier.recommended && (
-                  <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out]"></div>
+                  <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"></div>
                 )}
               </button>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

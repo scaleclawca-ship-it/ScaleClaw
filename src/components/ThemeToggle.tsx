@@ -1,5 +1,4 @@
 import { Moon, Sun } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useTheme } from '../hooks/useTheme';
 
 export const ThemeToggle = () => {
@@ -12,31 +11,7 @@ export const ThemeToggle = () => {
       aria-label="Toggle theme"
     >
       <div className="relative w-5 h-5 flex items-center justify-center">
-        <motion.div
-          initial={false}
-          animate={{
-            scale: theme === 'dark' ? 1 : 0,
-            opacity: theme === 'dark' ? 1 : 0,
-            rotate: theme === 'dark' ? 0 : 90
-          }}
-          transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-          className="absolute"
-        >
-          <Moon className="w-5 h-5" />
-        </motion.div>
-        
-        <motion.div
-          initial={false}
-          animate={{
-            scale: theme === 'light' ? 1 : 0,
-            opacity: theme === 'light' ? 1 : 0,
-            rotate: theme === 'light' ? 0 : -90
-          }}
-          transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-          className="absolute text-yellow-500"
-        >
-          <Sun className="w-5 h-5" />
-        </motion.div>
+        {theme === 'dark' ? <Moon className="w-5 h-5 absolute" /> : <Sun className="w-5 h-5 absolute text-yellow-500" />}
       </div>
     </button>
   );
