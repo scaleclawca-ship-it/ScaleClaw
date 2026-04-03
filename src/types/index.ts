@@ -1,6 +1,7 @@
 export interface Tier {
   name: string;
   price: string;
+  originalPrice?: string;
   description: string;
   features: string[];
   recommended?: boolean;

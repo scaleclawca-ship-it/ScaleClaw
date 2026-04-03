@@ -4,7 +4,8 @@ import { Tier } from '../types';
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: "$35",
+    price: "$28",
+    originalPrice: "$35",
     description: "For complete beginners who have never used OpenClaw.",
     features: [
       "Step-by-step OpenClaw setup guides",
@@ -18,7 +19,8 @@ const tiers: Tier[] = [
   },
   {
     name: "Builder",
-    price: "$150",
+    price: "$120",
+    originalPrice: "$150",
     description: "For those ready to build real income streams or automate a business.",
     recommended: true,
     features: [
@@ -33,7 +35,8 @@ const tiers: Tier[] = [
   },
   {
     name: "Operator",
-    price: "$500",
+    price: "$400",
+    originalPrice: "$500",
     description: "For people scaling to serious income or running agencies.",
     features: [
       "Everything in Builder",
@@ -86,9 +89,19 @@ const PricingTiers = () => {
               <div className="mb-8 border-b border-gray-200 dark:border-white/10 pb-8 relative z-10">
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">{tier.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm h-12 leading-relaxed">{tier.description}</p>
-                <div className="mt-8 flex items-baseline gap-1">
-                  <span className="text-6xl font-black text-gray-900 dark:text-white tracking-tighter">{tier.price}</span>
-                  <span className="text-gray-500 dark:text-gray-400 font-bold">/mo</span>
+                <div className="mt-8 flex flex-col gap-1">
+                  {tier.originalPrice && (
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-2xl font-bold text-gray-400 dark:text-gray-500 line-through decoration-scale-red/50">{tier.originalPrice}</span>
+                      <span className="bg-scale-red/10 border border-scale-red/20 text-scale-red text-[0.65rem] font-black uppercase tracking-widest px-2 py-1 rounded-md">
+                        Save 20%
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-6xl font-black text-gray-900 dark:text-white tracking-tighter">{tier.price}</span>
+                    <span className="text-gray-500 dark:text-gray-400 font-bold">/mo</span>
+                  </div>
                 </div>
               </div>
 
