@@ -4,6 +4,7 @@ export interface Tier {
   description: string;
   features: string[];
   recommended?: boolean;
+  whopLink?: string; // Add this for Whop integration
 }
 
 export interface RevenueModel {
