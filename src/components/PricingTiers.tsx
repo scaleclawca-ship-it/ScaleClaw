@@ -4,8 +4,8 @@ import { Tier } from '../types';
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: "$28",
-    originalPrice: "$35",
+    price: "$34.99",
+    originalPrice: "$43.74",
     description: "For complete beginners who have never used OpenClaw.",
     features: [
       "Step-by-step OpenClaw setup guides",
@@ -19,8 +19,8 @@ const tiers: Tier[] = [
   },
   {
     name: "Builder",
-    price: "$120",
-    originalPrice: "$150",
+    price: "$149.99",
+    originalPrice: "$187.49",
     description: "For those ready to build real income streams or automate a business.",
     recommended: true,
     features: [
@@ -35,8 +35,8 @@ const tiers: Tier[] = [
   },
   {
     name: "Operator",
-    price: "$400",
-    originalPrice: "$500",
+    price: "$499.99",
+    originalPrice: "$624.99",
     description: "For people scaling to serious income or running agencies.",
     features: [
       "Everything in Builder",
@@ -99,7 +99,7 @@ const PricingTiers = () => {
                     </div>
                   )}
                   <div className="flex items-baseline gap-1">
-                    <span className="text-6xl font-black text-gray-900 dark:text-white tracking-tighter">{tier.price}</span>
+                    <span className="text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tighter">{tier.price}</span>
                     <span className="text-gray-500 dark:text-gray-400 font-bold">/mo</span>
                   </div>
                 </div>
