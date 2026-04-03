@@ -70,7 +70,7 @@ const PricingTiers = () => {
             <div
               key={tier.name}
               className={`rounded-[2rem] p-8 lg:p-10 relative flex flex-col h-full ${tier.recommended
-                  ? 'bg-gradient-to-b from-red-50 to-white dark:from-[#2a0808] dark:to-[#0a0000] border-2 border-scale-red shadow-[0_0_30px_rgba(229,9,20,0.1)] dark:shadow-[0_0_50px_rgba(229,9,20,0.2)] overflow-hidden'
+                  ? 'bg-gradient-to-b from-red-50 to-white dark:from-[#2a0808] dark:to-[#0a0000] border-2 border-scale-red shadow-[0_0_30px_rgba(229,9,20,0.1)] dark:shadow-[0_0_50px_rgba(229,9,20,0.2)]'
                   : 'glass hover:border-gray-300 dark:hover:border-white/20'
                 } transition-all duration-500`}
             >
@@ -80,7 +80,7 @@ const PricingTiers = () => {
                   <div className="absolute top-0 right-0 p-6">
                     <Star className="w-8 h-8 text-scale-red fill-scale-red" />
                   </div>
-                  <div className="inline-block bg-scale-red/10 dark:bg-scale-red/20 border border-scale-red/20 dark:border-scale-red/30 text-scale-red font-black text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-6 relative z-10">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-scale-red text-white font-black text-xs uppercase tracking-[0.2em] px-4 py-1.5 rounded-full z-20 shadow-[0_0_20px_rgba(229,9,20,0.4)] whitespace-nowrap">
                     Best Value
                   </div>
                 </>
